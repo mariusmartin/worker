@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "cliente.bus.example"
+        versionCode="10" 
+        version   = "2.9.0">
+
+    <!-- versionCode is optional and Android only
+<preference name="phonegap-version" value="2.9.0" />
+	-->
+	<feature name="File">
+		<param name="android-package" value="org.apache.cordova.file.FileUtils" />
+	</feature>
+	<feature name="Capture">
+		<param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+	</feature>
+    <name>Worker link</name>
+	<preference name="phonegap-version" value="3.7.0" />
+	<preference name="fullscreen" value="true" />
+	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
+	<gap:plugin name="org.apache.cordova.device" version="0.2.3" />
+	<gap:splash src="splash.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="splash.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="splash.png" gap:platform="android" gap:density="hdpi" />
+	<!--<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />-->
+    <description>
+		Flujo de datos
+    </description>
+    <author href="" email="mariusmartin@gmail.com">
+        mario
+    </author>
+	
+    <!-- for Android
+		<feature name="http://api.phonegap.com/1.0/media"/>
+	-->
+    <preference name="android-minSdkVersion" value="9" />	
+</widget>

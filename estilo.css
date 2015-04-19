@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+@media only screen and (max-width: 1080px) {
+	.titulos{
+		font-size: 42px;
+		color:#444;
+	}
+	div, input, span {
+		font-size: 28px;
+		color:#777;
+	}
+}
+@media only screen and (max-width: 375px) {
+	.titulos{
+		font-size: 38px;
+		color:#444;
+	}
+	div, input, span {
+		font-size: 24px;
+		color:#777;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.titulos{
+		font-size: 35px;
+		color:#444;
+	}
+	div, input, span {
+		font-size: 22px;
+		color:#777;
+	}
+}
+@media only screen and (max-width: 309px) {
+	.titulos{
+		font-size: 30px;
+		color:#444;
+	}
+	div, input, span {
+		font-size: 18px;
+		color:#777;
+	}
+}
+
+@media only screen and (max-width: 270px) {
+	.titulos{
+		font-size: 26px;
+		color:#444;
+	}
+	div, input, span {
+		font-size: 14px;
+		color:#777;
+	}
+}
+.elip{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
