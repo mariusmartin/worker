@@ -93,7 +93,7 @@ function repostajes(){
 	$.ajax({
 		type: "POST",
 		async: false,
-		url: 'muestrarepostajes.php',
+		url: conexionG + 'muestrarepostajes.php',
 		data: { 
 		},
 		error: function(){
