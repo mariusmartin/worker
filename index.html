@@ -10,15 +10,14 @@
 		<meta HTTP-EQUIV="Expires" CONTENT="-1" />
 		<title>Worker</title>
 		<script type="text/javascript" src="phonegap.js"></script>
-				<!-- 
-		<script type='application/javascript' src='fastclick.js'></script>
-		-->
+
+		<script type="application/javascript" src="fastclick.js"></script>
 		<script type="text/javascript" src="jquerymin.js"></script>
 		<script type="text/javascript" src="js.js"></script>
 		<link rel="StyleSheet" type="text/css" href="estilo.css" />
 	</head>
 	<body onselectstart="return false" style="margin:0px; font-family:Trebuchet MS; color:black;">
-		<div id="login" style="display:none;">
+		<lang id="login" style="display:none;">
 			<div style="width:calc(100% - 10px); margin:0 10px;">
 				<div class="titulos" style="float:left; width:100%; margin-top:10px;">Inicia sesión</div>
 				<div style="float:left; width:100%; margin-top:10px;"><input id="remember" type="checkbox">recordar en este dispositivo</div>
@@ -27,11 +26,18 @@
 				<div style="float:left; width:100%; margin-top:20px;">Contraseña</div>
 				<div style="float:left; width:100%;"><input id="pass" type="password"><button id="botonInicio" onclick='checkUser("boton")'>Enviar</button></div>
 			</div>
-		</div>
-		<div id="inicio" style="display:none; background-color:blue; height:100%;">
-		bbbbbbbb
+		</lang>
+		<lang id="inicio" style="display:none; background-color:blue; height:100%;">
+			<div id="menu" class="contenedor" style="width:100%; height:100%;">
+				<div style="float:left; width:100%; height: 100px; line-height:100px;" > Tus partes</div>
+				<div style="float:left; width:100%; height: 100px; line-height:100px;" > Pedidos</div>
+				<div style="float:left; width:100%; height: 100px; line-height:100px;" > Repostajes</div>
+				<div style="float:left; width:100%; height: 100px; line-height:100px; " > Servicios</div>
+				<div style="float:left; width:100%; height: 100px; line-height:100px; " > Incidencias</div>
+			</div>
+			<div id="respostajes" class="contenedor" style="width:100%; height:100%;"></div>
 			<div onclick='cerrarSesion()' style="width:calc(100% - 10px); margin:0 10px; background-color:red;">
 			</div>
-		</div>
+		</lang>
 	</body>
 </html>

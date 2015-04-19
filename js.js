@@ -4,11 +4,14 @@ $(document).ready(function(){
 	conexionG = ""; //WEB
 	if (location.href.indexOf("http://") == -1){
 		esTelefono = true;
-		conexionG = "http://www.blued.es/mambo/worker/"; //ANDROID
+		conexionG = "http://www.blued.es/mambo/worker/"; //ANDROID 
+		
 	}
 	if (esTelefono == true){
+		alert("android")
 		document.addEventListener("deviceready", onDeviceReady, false);
 	}else{
+		alert("web");
 		onWebReady();
 	}
 });
@@ -102,7 +105,7 @@ function checkUser(tipo_){
 				enviando = false;
 				if (data == 'ok'){
 					$("#login").css('display','none');
-					$("#inicio").css('display','block');
+					menu();
 					
 				}else{
 					$("#login").css('display','block');
@@ -128,4 +131,17 @@ function cerrarSesion(){
 		},
 		timeout: 6000
 	});	
+}
+
+function menu(){
+	$("#login").css('display','none');
+	$("#inicio").css('display','block');
+	$('.contenedor').css('display','none');
+	$('#menu').css('display','block');
+	
+}
+
+function login(){
+	$("#login").css('display','block');
+	$("#inicio").css('display','none');
 }
