@@ -1,4 +1,6 @@
 var mac = '';
+var touch = document.getelementsbyclassname('touch');
+FastClick.attach(touch);
 $(document).ready(function(){
 	esTelefono = false;
 	conexionG = ""; //WEB
