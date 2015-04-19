@@ -14,6 +14,9 @@ html, body {
 		font-size: 28px;
 		color:#777;
 	}
+	.rowdata{
+		font-size: 18px;
+	}
 }
 @media only screen and (max-width: 375px) {
 	.titulos{
@@ -23,6 +26,9 @@ html, body {
 	div, input, span {
 		font-size: 24px;
 		color:#777;
+	}
+	.rowdata{
+		font-size: 18px;
 	}
 }
 @media only screen and (max-width: 360px) {
@@ -34,6 +40,9 @@ html, body {
 		font-size: 22px;
 		color:#777;
 	}
+	.rowdata{
+		font-size: 14px;
+	}
 }
 @media only screen and (max-width: 309px) {
 	.titulos{
@@ -43,6 +52,9 @@ html, body {
 	div, input, span {
 		font-size: 18px;
 		color:#777;
+	}
+	.rowdata{
+		font-size: 12px;
 	}
 }
 
@@ -54,6 +66,9 @@ html, body {
 	div, input, span {
 		font-size: 14px;
 		color:#777;
+	}
+	.rowdata{
+		font-size: 10px;
 	}
 }
 .elip{
