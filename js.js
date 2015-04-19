@@ -9,10 +9,10 @@ $(document).ready(function(){
 		
 	}
 	if (esTelefono == true){
-		alert("android")
+
 		document.addEventListener("deviceready", onWebReady, false);
 	}else{
-		alert("web");
+
 		onWebReady();
 	}
 });
@@ -90,19 +90,21 @@ function login(){
 function repostajes(){
 	$('.contenedor').css('display','none');
 	$('#repostajes').css('display','block');
-	$.ajax({
-		type: "POST",
-		async: false,
-		url: conexionG + 'muestrarepostajes.php',
-		data: { 
-		},
-		error: function(){
+	$('#repostajes').html("Espera mientras se cargan los datos...");
+	setTimeout(function(){
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: conexionG + 'muestrarepostajes.php',
+			data: { 
+			},
+			error: function(){
 
-		},
-		success: function(data){
-			alert(data)
-			$('#repostajes').html(data);
-		},
-		timeout: 6000
-	});	
+			},
+			success: function(data){
+				$('#repostajes').html(data);
+			},
+			timeout: 6000
+		});	
+	})
 }
