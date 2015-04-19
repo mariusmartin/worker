@@ -86,3 +86,23 @@ function login(){
 	$("#login").css('display','block');
 	$("#inicio").css('display','none');
 }
+
+function repostajes(){
+	$('.contenedor').css('display','none');
+	$('#repostajes').css('display','block');
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: 'muestrarepostajes.php',
+		data: { 
+		},
+		error: function(){
+
+		},
+		success: function(data){
+			alert(data)
+			$('#repostajes').html(data);
+		},
+		timeout: 6000
+	});	
+}
