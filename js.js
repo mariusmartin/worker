@@ -21,6 +21,7 @@ $(document).ready(function(){
 function onWebReady(){
 	FastClick.attach(document.body);
 	checkUser('inicio');
+	getGeo()
 }
 var enviando = false;
 function checkUser(tipo_){
@@ -152,6 +153,7 @@ function onError(error) {
 function getGeo(){
 	setTimeout(function(){
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		getGeo()
 	},5000);
 }
 function grabaGeo(){
@@ -177,6 +179,7 @@ function grabaGeo(){
 			error: function(){
 			},
 			success: function(data){
+				alert(data)
 			},
 			timeout: 6000
 		});	
