@@ -21,8 +21,8 @@ $(document).ready(function(){
 function onWebReady(){
 	FastClick.attach(document.body);
 	checkUser('inicio');
-	getGeo()
 }
+
 var enviando = false;
 function checkUser(tipo_){
 	if (tipo_ == 'boton'){
@@ -109,11 +109,6 @@ function repostajes(){
 		});	
 	})
 }
-var countSuccess = 0;
-var lat = [];
-var lon = [];
-var spe = [];
-var tim = [];
 var onSuccess = function(position) {
 	suc(position.coords.latitude,position.coords.longitude,position.coords.speed,position.timestamp)
    /* alert('Latitude: '          + position.coords.latitude          + '\n' +
@@ -125,6 +120,11 @@ var onSuccess = function(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');*/
 };
+var countSuccess = 0;
+var lat = [];
+var lon = [];
+var spe = [];
+var tim = [];
 function suc(la,lo,sp,ti){
 	var lat_ = la;
 	var spe_ = sp;
