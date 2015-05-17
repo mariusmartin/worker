@@ -23,6 +23,8 @@
 	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
 	
+	<gap:plugin name="com.badrit.backgroundjs" version="0.1.0" />
+	
 	<gap:splash src="splash.png" gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="splash.png" gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="splash.png" gap:platform="android" gap:density="hdpi" />

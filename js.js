@@ -169,3 +169,8 @@ function grabaGeo(){
 		});	
 	})	
 }
+var timerCount = 0;
+window.plugins.BackgroundJS.LockBackgroundTime(function(){}, function(msg){console.log(msg);});
+setInterval(function() {
+$('body').html(timerCount++);
+},1000);
