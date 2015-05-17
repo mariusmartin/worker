@@ -127,14 +127,14 @@ var onSuccess = function(position) {
 	spe.push(spe_);
 	tim.push(position.timestamp);
 	
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
+   /* alert('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
           'Accuracy: '          + position.coords.accuracy          + '\n' +
           'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
           'Heading: '           + position.coords.heading           + '\n' +
           'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
+          'Timestamp: '         + position.timestamp                + '\n');*/
 	countSuccess++;
 	if (countSuccess > 10){
 		grabaGeo();
@@ -168,7 +168,7 @@ function grabaGeo(){
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
-			async: true,
+			async: false,
 			url: conexionG + 'grabageo.php',
 			data: {
 				lat_: loc_lat,
