@@ -151,14 +151,6 @@ function getGeo(){
 	},5000);
 }
 function grabaGeo(){
-	var loc_lat = lat.join('|');
-	var loc_lon = lon.join('|');
-	var loc_spe = spe.join('|');
-	var loc_tim = tim.join('|');
-	lat = [];
-	lon = [];
-	spe = [];
-	tim = [];
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
