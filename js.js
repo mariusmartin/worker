@@ -111,8 +111,7 @@ function repostajes(){
 	})
 }
 var onSuccess = function(position) {
-	suc(position.coords.latitude,position.coords.longitude,position.coords.speed,position.timestamp)
-   /* alert('Latitude: '          + position.coords.latitude          + '\n' +
+	/*alert('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
           'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -120,6 +119,7 @@ var onSuccess = function(position) {
           'Heading: '           + position.coords.heading           + '\n' +
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');*/
+	suc(position.coords.latitude,position.coords.longitude,position.coords.speed,position.timestamp);
 };
 var countSuccess = 0;
 var insertString = '';
@@ -151,6 +151,7 @@ function getGeo(){
 	},5000);
 }
 function grabaGeo(){
+	alert(insertString.substr(1))
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
