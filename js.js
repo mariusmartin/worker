@@ -21,6 +21,7 @@ $(document).ready(function(){
 function onWebReady(){
 	FastClick.attach(document.body);
 	checkUser('inicio');
+	getGeo()
 }
 
 var enviando = false;
