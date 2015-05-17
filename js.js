@@ -122,23 +122,14 @@ var onSuccess = function(position) {
           'Timestamp: '         + position.timestamp                + '\n');*/
 };
 var countSuccess = 0;
-var lat = [];
-var lon = [];
-var spe = [];
-var tim = [];
+var insertString = '';
 function suc(la,lo,sp,ti){
 	var lat_ = la;
 	var spe_ = sp;
-	if (spe_ > 0){
-		
-	}else{
+	if (spe_ > 0){}else{
 		spe_ = 0;
 	}
-	lat.push(lat_);
-	lon.push(lo);
-	spe.push(spe_);
-	tim.push(ti);
-	
+	insertString += ',("'+lat_+'","'+lo+'","'+spe_+'","'+ti+'")';
 	countSuccess++;
 	if (countSuccess > 10){
 		grabaGeo();
@@ -174,10 +165,7 @@ function grabaGeo(){
 			async: false,
 			url: conexionG + 'grabageo.php',
 			data: {
-				lat_: loc_lat,
-				lon_: loc_lon,
-				spe_: loc_spe,
-				tim_: loc_tim,
+				insert_: insertString.substr(1)
 			},
 			error: function(){
 			},
