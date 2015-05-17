@@ -115,18 +115,7 @@ var lon = [];
 var spe = [];
 var tim = [];
 var onSuccess = function(position) {
-	var lat_ = position.coords.latitude;
-	var spe_ = position.coords.speed;
-	if (spe_ > 0){
-		
-	}else{
-		spe_ = 0;
-	}
-	lat.push(lat_);
-	lon.push(position.coords.longitude);
-	spe.push(spe_);
-	tim.push(position.timestamp);
-	
+	suc(position.coords.latitude,position.coords.longitude,position.coords.speed,position.timestamp)
    /* alert('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
@@ -135,13 +124,26 @@ var onSuccess = function(position) {
           'Heading: '           + position.coords.heading           + '\n' +
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');*/
+};
+function suc(la,lo,sp,ti){
+	var lat_ = la;
+	var spe_ = sp;
+	if (spe_ > 0){
+		
+	}else{
+		spe_ = 0;
+	}
+	lat.push(lat_);
+	lon.push(lo);
+	spe.push(spe_);
+	tim.push(ti);
+	
 	countSuccess++;
 	if (countSuccess > 10){
 		grabaGeo();
 		countSuccess = 0;
 	}
-};
-
+}
 // onError Callback receives a PositionError object
 //
 function onError(error) {
