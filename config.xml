@@ -19,11 +19,15 @@
     <name>Worker link</name>
 	<preference name="phonegap-version" value="3.7.0" />
 	<preference name="fullscreen" value="true" />
+
+	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
-	<gap:plugin name="org.apache.cordova.device" version="0.2.3" />
+	
 	<gap:splash src="splash.png" gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="splash.png" gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="splash.png" gap:platform="android" gap:density="hdpi" />
+
+
 	<!--<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />-->
     <description>
 		Flujo de datos
