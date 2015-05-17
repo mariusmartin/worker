@@ -108,8 +108,24 @@ function repostajes(){
 		});	
 	})
 }
-
+var countSuccess = 0;
+var lat = [];
+var lon = [];
+var spe = [];
+var tim = [];
 var onSuccess = function(position) {
+	var lat_ = position.coords.latitude;
+	var spe_ = position.coords.speed;
+	if (spe_ > 0){
+		
+	}else{
+		spe_ = 0;
+	}
+	lat.push(lat_);
+	lon.push(position.coords.longitude);
+	spe.push(spe_);
+	tim.push(position.timestamp);
+	
     alert('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
@@ -118,6 +134,11 @@ var onSuccess = function(position) {
           'Heading: '           + position.coords.heading           + '\n' +
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
+	countSuccess++;
+	if (countSuccess > 10){
+		grabaGeo();
+		countSuccess = 0;
+	}
 };
 
 // onError Callback receives a PositionError object
@@ -127,7 +148,30 @@ function onError(error) {
           'message: ' + error.message + '\n');
 }
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+//navigator.geolocation.getCurrentPosition(onSuccess, onError);
 function getGeo(){
-	
+	setTimeout(function(){
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	},5000);
+}
+function grabaGeo(){
+	setTimeout(function(){
+		$.ajax({
+			type: "POST",
+			async: true,
+			url: conexionG + 'grabageo.php',
+			data: {
+				lat_: lat.join('|'),
+				lon_: lon.join('|'),
+				spe_: spe.join('|'),
+				tim_: tim.join('|'),
+			},
+			error: function(){
+
+			},
+			success: function(data){
+			},
+			timeout: 6000
+		});	
+	})	
 }
