@@ -155,19 +155,26 @@ function getGeo(){
 	},5000);
 }
 function grabaGeo(){
+	var loc_lat = lat.join('|');
+	var loc_lon = lon.join('|');
+	var loc_spe = spe.join('|');
+	var loc_tim = tim.join('|');
+	lat = [];
+	lon = [];
+	spe = [];
+	tim = [];
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
 			async: true,
 			url: conexionG + 'grabageo.php',
 			data: {
-				lat_: lat.join('|'),
-				lon_: lon.join('|'),
-				spe_: spe.join('|'),
-				tim_: tim.join('|'),
+				lat_: loc_lat,
+				lon_: loc_lon,
+				spe_: loc_spe,
+				tim_: loc_tim,
 			},
 			error: function(){
-
 			},
 			success: function(data){
 			},
