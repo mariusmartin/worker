@@ -138,7 +138,9 @@ function suc(la,lo,sp,ti){
 }
 // onError Callback receives a PositionError object
 //
+var err = 0;
 function onError(error) {
+	err++;
     /*alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n'); */
 }
