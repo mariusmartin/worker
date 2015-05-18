@@ -153,7 +153,6 @@ function getGeo(){
 	},5000);
 }
 function grabaGeo(){
-	//alert(insertString.substr(1))
 	var agrabar = insertString;
 	insertString = '';
 	setTimeout(function(){
