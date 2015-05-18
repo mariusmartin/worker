@@ -154,13 +154,15 @@ function getGeo(){
 }
 function grabaGeo(){
 	//alert(insertString.substr(1))
+	var agrabar = insertString;
+	insertString = '';
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
 			async: false,
 			url: conexionG + 'grabageo.php',
 			data: {
-				insert_: insertString.substr(1)
+				insert_: agrabar.substr(1)
 			},
 			error: function(){
 			},
