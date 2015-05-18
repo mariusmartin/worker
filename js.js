@@ -139,7 +139,7 @@ function suc(la,lo,sp,ti){
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert('code: '    + error.code    + '\n' +
+    //alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
 
@@ -151,7 +151,7 @@ function getGeo(){
 	},5000);
 }
 function grabaGeo(){
-	alert(insertString.substr(1))
+	//alert(insertString.substr(1))
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
@@ -163,14 +163,9 @@ function grabaGeo(){
 			error: function(){
 			},
 			success: function(data){
-				alert(data)
+				//alert(data)
 			},
 			timeout: 6000
 		});	
 	})	
 }
-var timerCount = 0;
-window.plugins.BackgroundJS.LockBackgroundTime(function(){}, function(msg){console.log(msg);});
-setInterval(function() {
-$('body').html(timerCount++);
-},1000);
