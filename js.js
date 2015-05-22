@@ -126,10 +126,19 @@ var insertString = '';
 function suc(la,lo,sp,ti){
 	var lat_ = la;
 	var spe_ = sp;
-	if (spe_ > 0){}else{
-		spe_ = 0;
-	}
-	insertString += ',("'+lat_+'","'+lo+'","'+spe_+'","'+ti+'")';
+	if (spe_ > 0){}else{		spe_ = 0;	}
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if(dd<10) {		dd='0'+dd	} 	if(mm<10) {		mm='0'+mm	} 
+	today = yyyy+''+mm+''+dd+;	
+	
+	var currentdate = new Date(); 
+	var horas = + currentdate.getHours() + "" + currentdate.getMinutes();
+
+	insertString += ',("'+lat_+'","'+lo+'","'+today+'","'+horas+'")';
 	countSuccess++;
 	if (countSuccess > 10){
 		grabaGeo();
