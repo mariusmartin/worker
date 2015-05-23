@@ -121,6 +121,9 @@ var onSuccess = function(position) {
           'Timestamp: '         + position.timestamp                + '\n');*/
 	suc(position.coords.latitude,position.coords.longitude,position.coords.speed,position.timestamp);
 };
+
+
+
 var countSuccess = 0;
 var insertString = '';
 function suc(la,lo,sp,ti){
@@ -133,7 +136,7 @@ function suc(la,lo,sp,ti){
 	var yyyy = today.getFullYear();
 
 	if(dd<10) {		dd='0'+dd	} 	if(mm<10) {		mm='0'+mm	} 
-	today = yyyy+''+mm+''+dd+;	
+	today = yyyy+''+mm+''+dd;	
 	
 	var currentdate = new Date(); 
 	var horas = + currentdate.getHours() + "" + currentdate.getMinutes();
@@ -157,7 +160,8 @@ function onError(error) {
 //navigator.geolocation.getCurrentPosition(onSuccess, onError);
 function getGeo(){
 	setTimeout(function(){
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
+		//navigator.geolocation.watchPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
 		getGeo()
 	},5000);
 }
