@@ -175,7 +175,6 @@ function getGeo(){
 function grabaGeo(){
 	var agrabar = insertString;
 	insertString = '';
-	alert(agrabar)
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
