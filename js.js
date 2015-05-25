@@ -139,9 +139,10 @@ function suc(la,lo,sp,ti){
 	today = yyyy+''+mm+''+dd;	
 	
 	var currentdate = new Date(); 
+	var sec_ = currentdate.getSeconds(); if (sec_ < 10){sec_ = '0'+sec_;}
 	var hor_ = currentdate.getHours(); if (hor_ < 10){hor_ = '0'+hor_;}
 	var min_ = currentdate.getMinutes(); if (min_ < 10){min_ = '0'+min_;}
-	var horas = hor_ + ":" + min_;
+	var horas = sec_ + ":" +hor_ + ":" + min_;
 
 	insertString += ',("'+lat_+'","'+lo+'","'+today+'","'+horas+'","'+spe_+'")';
 	//console.log(insertString);
@@ -175,6 +176,7 @@ function getGeo(){
 function grabaGeo(){
 	var agrabar = insertString;
 	insertString = '';
+	
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
