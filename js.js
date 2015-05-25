@@ -139,14 +139,21 @@ function suc(la,lo,sp,ti){
 	today = yyyy+''+mm+''+dd;	
 	
 	var currentdate = new Date(); 
-	var horas = + currentdate.getHours() + "" + currentdate.getMinutes();
+	var hor_ = currentdate.getHours(); if (hor_ < 10){hor_ = '0'+hor_;}
+	var min_ = currentdate.getMinutes(); if (min_ < 10){min_ = '0'+min_;}
+	var horas = + hor_ + "" + min_;
 
-	insertString += ',("'+lat_+'","'+lo+'","'+today+'","'+horas+'")';
+	insertString += ',("'+lat_+'","'+lo+'","'+today+'","'+horas+'","'+spe_+'")';
+	//console.log(insertString);
 	countSuccess++;
+	$('#posicionesRecogidas').text(countSuccess);
 	if (countSuccess > 10){
 		grabaGeo();
 		countSuccess = 0;
 	}
+}
+function verPosicionesQuery(){
+	alert(insertString)
 }
 // onError Callback receives a PositionError object
 //
@@ -163,11 +170,12 @@ function getGeo(){
 		navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
 		//navigator.geolocation.watchPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
 		getGeo()
-	},5000);
+	},6000);
 }
 function grabaGeo(){
 	var agrabar = insertString;
 	insertString = '';
+	alert(agrabar)
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
