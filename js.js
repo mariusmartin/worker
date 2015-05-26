@@ -110,7 +110,7 @@ function repostajes(){
 			},
 			success: function(data){
 				$('#repostajes').html(data);
-				$('#repostajes').append('<div onclick="cierraRepostajes()" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:12px;"src="img/whiteCross16.png"></div>')
+				$('#repostajes').append('<div onclick="cierraRepostajes()" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:4px;"src="img/whiteCross32__.png"></div>')
 				setTimeout(function(){
 					$( ".circback" ).animate({
 						opacity: 1,
