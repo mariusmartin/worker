@@ -89,6 +89,11 @@ function login(){
 	$("#inicio").css('display','none');
 }
 
+function cierraRepostajes(){
+	$('.contenedor').css('display','block');
+	$('#repostajes').css('display','none');	
+	$('#repostajes').empty();
+}
 function repostajes(){
 	$('.contenedor').css('display','none');
 	$('#repostajes').css('display','block');
@@ -105,6 +110,15 @@ function repostajes(){
 			},
 			success: function(data){
 				$('#repostajes').html(data);
+				$('#repostajes').append('<div onclick="cierraRepostajes()" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:12px;"src="img/whiteCross16.png"></div>')
+				setTimeout(function(){
+					$( ".circback" ).animate({
+						opacity: 1,
+						top: "+=40"
+						}, 300, function() {
+						// Animation complete.
+					});
+				},300);
 			},
 			timeout: 6000
 		});	
