@@ -80,8 +80,27 @@ html, body {
 .circ1 {
     width: 40px;
     height: 40px;
-    background: #0e38c1;
--webkit-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
--moz-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
+    background: #388aba;
+	-webkit-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
+	-moz-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
+	box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
+}
+.enGris{
+-webkit-filter: grayscale(1);
+filter:gray;
+}
+
+.ocultar{
+	-webkit-transition: all 100ms linear;
+	-moz-transition: all 100ms linear;
+	-ms-transition: all 100ms linear;
+	-o-transition: all 100ms linear;
+	transition: all 100ms linear;
+}
+.circback.ocultar {
+    -moz-transform: scale(0.01);
+    -webkit-transform: scale(0.01);
+    -o-transform: scale(0.01);
+    -ms-transform: scale(0.01);
+    transform: scale(0.01);
 }

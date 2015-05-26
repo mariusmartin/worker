@@ -89,10 +89,13 @@ function login(){
 	$("#inicio").css('display','none');
 }
 
-function cierraRepostajes(){
-	$('.contenedor').css('display','block');
-	$('#repostajes').css('display','none');	
-	$('#repostajes').empty();
+function cierraRepostajes(obj){
+	$( obj ).addClass('ocultar');
+	setTimeout(function(){
+		$('.contenedor').css('display','block');
+		$('#repostajes').css('display','none');	
+		$('#repostajes').empty();
+	},100);
 }
 function repostajes(){
 	$('.contenedor').css('display','none');
@@ -111,7 +114,7 @@ function repostajes(){
 			success: function(data){
 				
 				$('#repostajes').html(data);
-				$('#repostajes').append('<div onclick="cierraRepostajes()" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:4px;"src="img/whiteCross32__.png"></div>')
+				$('#repostajes').append('<div onclick="cierraRepostajes(this)" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:4px;"src="img/whiteCross32__.png"></div>')
 				setTimeout(function(){
 					$( ".circback" ).animate({
 						opacity: 1,
@@ -162,17 +165,19 @@ function suc(la,lo,sp,ti){
 	insertString += ',("'+lat_+'","'+lo+'","'+today+'","'+horas+'","'+spe_+'")';
 	//console.log(insertString);
 	countSuccess++;
-	$('#posicionesRecogidas').text(countSuccess);
+	
 	if (countSuccess > 10){
 		grabaGeo();
 		countSuccess = 0;
 	}
 }
-function verPosicionesQuery(){
-	alert(insertString)
+function clickGpsPos(){
+	if ($('.iconGpsPos').hasClass('enGris')){
+		$('.iconGpsPos').removeClass('enGris');
+	}else{
+		$('.iconGpsPos').addClass('enGris');
+	}
 }
-// onError Callback receives a PositionError object
-//
 var err = 0;
 function onError(error) {
 	err++;
@@ -182,16 +187,17 @@ function onError(error) {
 
 //navigator.geolocation.getCurrentPosition(onSuccess, onError);
 function getGeo(){
-	setTimeout(function(){
-		navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
-		//navigator.geolocation.watchPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
-		getGeo()
-	},6000);
+	if (!$('.iconGpsPos').hasClass('enGris')){
+		setTimeout(function(){
+			navigator.geolocation.getCurrentPosition(onSuccess, onError,{ enableHighAccuracy: true });
+			//navigator.geolocation.watchPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+			getGeo()
+		},6000);
+	}
 }
 function grabaGeo(){
 	var agrabar = insertString;
 	insertString = '';
-	
 	setTimeout(function(){
 		$.ajax({
 			type: "POST",
