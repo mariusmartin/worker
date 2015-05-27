@@ -89,19 +89,21 @@ function login(){
 	$("#inicio").css('display','none');
 }
 
-function cierraRepostajes(obj){
+function cierraEsto(obj){
 	$( obj ).addClass('ocultar');
 	setTimeout(function(){
-		$('.contenedor').css('display','block');
-		$('#repostajes').css('display','none');	
-		$('#repostajes').empty();
-	},100);
+		$(obj).parent().fadeOut(200,function(){
+			$('#menu').css('display','block');
+			$(obj).parent().empty();
+		});	
+	},200);
 }
 function repostajes(){
 	$('.contenedor').css('display','none');
-	$('#repostajes').css('display','block');
-	$('#repostajes').html("Espera mientras se cargan los datos...");
-	setTimeout(function(){
+	$('#repostajes').css('height','100%')
+	$('#repostajes').html("<div style='float:left; width:100%; line-height:100%; height:100%; text-align:center;'>cargando...</div>");
+	$('#repostajes').css('display','none');
+	$('#repostajes').fadeIn(function(){
 		$.ajax({
 			type: "POST",
 			async: false,
@@ -112,9 +114,8 @@ function repostajes(){
 
 			},
 			success: function(data){
-				
 				$('#repostajes').html(data);
-				$('#repostajes').append('<div onclick="cierraRepostajes(this)" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:4px;"src="img/whiteCross32__.png"></div>')
+				$('#repostajes').append('<div onclick="cierraEsto(this)" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:4px;"src="img/whiteCross32__.png"></div>');
 				setTimeout(function(){
 					$( ".circback" ).animate({
 						opacity: 1,
@@ -126,7 +127,38 @@ function repostajes(){
 			},
 			timeout: 6000
 		});	
-	})
+	});
+}
+function muestraVehiculos(){
+	$('.contenedor').css('display','none');
+	$('#vehiculos').css('height','100%')
+	$('#vehiculos').html("<div style='float:left; width:100%; line-height:100%; height:100%; text-align:center;'>cargando...</div>");
+	$('#vehiculos').css('display','none');
+	$('#vehiculos').fadeIn(function(){
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: conexionG + 'muestravehiculos.php',
+			data: { 
+			},
+			error: function(){
+
+			},
+			success: function(data){
+				$('#vehiculos').html(data);
+				$('#vehiculos').append('<div onclick="cierraEsto(this)" class="circback circulo circ1" style="position:fixed; opacity:0; top:-20px; right:20px;"><img style="margin:4px;"src="img/whiteCross32__.png"></div>');
+				setTimeout(function(){
+					$( ".circback" ).animate({
+						opacity: 1,
+						top: "+=40"
+						}, 300, function() {
+						// Animation complete.
+					});
+				},300);
+			},
+			timeout: 6000
+		});	
+	});
 }
 var onSuccess = function(position) {
 	/*alert('Latitude: '          + position.coords.latitude          + '\n' +

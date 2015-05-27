@@ -81,9 +81,9 @@ html, body {
     width: 40px;
     height: 40px;
     background: #388aba;
-	-webkit-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
-	-moz-box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
-	box-shadow: 0px 12px 8px -10px rgba(0,0,0,0.79);
+-webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.44);
 }
 .enGris{
 -webkit-filter: grayscale(1);
@@ -91,11 +91,11 @@ filter:gray;
 }
 
 .ocultar{
-	-webkit-transition: all 100ms linear;
-	-moz-transition: all 100ms linear;
-	-ms-transition: all 100ms linear;
-	-o-transition: all 100ms linear;
-	transition: all 100ms linear;
+	-webkit-transition: all 200ms linear;
+	-moz-transition: all 200ms linear;
+	-ms-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	transition: all 200ms linear;
 }
 .circback.ocultar {
     -moz-transform: scale(0.01);

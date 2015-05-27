@@ -31,15 +31,18 @@
 		<lang id="inicio" style="display:none; height:100%;">
 			<div id="menu" class="contenedor" style="width:100%; height:100%;">
 				<div id="zonaIcon" style="float:left; margin:10px; width:calc(100% - 20px); height: 44px;">
-					<div style="float:left; width:24px; height:24px;"><img onclick="clickGpsPos()" class="iconGpsPos" src="img/gpspos.png"></div>
+					<div style="float:left; width:24px; height:24px;"><img onclick="clickGpsPos()" class="iconGpsPos enGris" src="img/gpspos.png"></div>
+					<div style="float:left; width:24px; height:24px; margin-left:50px;"><img onclick="window.location ='salir.php'" class="iconPowoff enGris" src="img/powoff.png"></div>
 				</div>
-				<div style="float:left; width:100%; line-height:60px;"> Partes</div>
-				<div onclick="pedidos()" style="float:left; width:100%; line-height:60px;" > Pedidos</div>
-				<div onclick="repostajes()" style="float:left; width:100%; height: 100px; line-height:100px;" > Repostajes</div>
-				<div style="float:left; width:100%; height: 100px; line-height:100px; " > Servicios</div>
-				<div style="float:left; width:100%; height: 100px; line-height:100px; " > Incidencias</div>
+				<div style="float:left; width:calc(100% - 40px); padding-left:40px; line-height:60px;"> Partes</div>
+				<div onclick="pedidos()" style="float:left; width:calc(100% - 40px); padding-left:40px; line-height:60px;" > Pedidos</div>
+				<div onclick="repostajes()" style="float:left; width:calc(100% - 40px); padding-left:40px; height: 60px; line-height:60px;" > Repostajes</div>
+				<div style="float:left; width:calc(100% - 40px); padding-left:40px; height: 60px; line-height:60px; " > Servicios</div>
+				<div style="float:left; width:calc(100% - 40px); padding-left:40px; height: 60px; line-height:60px; " > Incidencias</div>
+				<div onclick="muestraVehiculos()" style="float:left; width:calc(100% - 40px); padding-left:40px; height: 60px; line-height:60px; " >Vehículos</div>
 			</div>
 			<div id="repostajes" class="contenedor" style="width:100%; height:100%;"></div>
+			<div id="vehiculos" class="contenedor" style="width:100%; height:100%;"></div>
 			<div onclick='cerrarSesion()' style="width:calc(100% - 10px); margin:0 10px; background-color:red;">
 			</div>
 		</lang>
